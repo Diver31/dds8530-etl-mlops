@@ -1,0 +1,28 @@
+# Credentials and local environment
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+*.pem
+*.key
+orchestration/db.env
+
+# Generated data, models, audit workspaces
+/data/
+/reports/
+/model_release/
+/mlflow_tracking.db*
+/mlruns/
+/mlartifacts/
+/orchestration/runs/
+orchestration/dds8530_etl_execution_before_mlops.txt
+*.db
+*.sqlite*
+
+# Package build remnants
+build/
+dist/
