@@ -1,0 +1,6 @@
+db.env
+runs/
+*.db
+*.sqlite
+__pycache__/
+.env
