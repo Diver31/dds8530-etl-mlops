@@ -1,0 +1,72 @@
+name: Approved AWS App Runner deployment
+# Only authorized manual dispatch with a protected GitHub environment can deploy.
+on:
+  workflow_dispatch:
+    inputs:
+      release_reason:
+        description: 'Approved release reference'
+        required: true
+        type: string
+      release_mode:
+        description: 'Bootstrap first ECR image or update existing App Runner service'
+        required: true
+        type: choice
+        default: bootstrap_ecr
+        options:
+          - bootstrap_ecr
+          - deploy_service
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: dds8530-aws-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    name: Build, validate, publish, and request service deployment
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    environment: production
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Install dependencies and test candidate model
+        run: |
+          python -m pip install -r deployment/requirements.txt
+          python scripts/build_release_model.py
+          python -m unittest discover -s tests -p 'test_release_service.py' -v
+      - name: AWS temporary credentials via OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          role-to-assume: ${{ vars.AWS_ROLE_TO_ASSUME }}
+          role-session-name: dds8530-approved-release
+      - name: Authenticate container registry
+        id: ecr
+        uses: aws-actions/amazon-ecr-login@v2
+      - name: Publish immutable and stable ECR image tags
+        env:
+          REGISTRY: ${{ steps.ecr.outputs.registry }}
+          REPOSITORY: ${{ vars.ECR_REPOSITORY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$REPOSITORY"
+          docker build --platform linux/amd64 -t "$REGISTRY/$REPOSITORY:$GITHUB_SHA" \
+            -t "$REGISTRY/$REPOSITORY:production" .
+          docker push "$REGISTRY/$REPOSITORY:$GITHUB_SHA"
+          docker push "$REGISTRY/$REPOSITORY:production"
+      - name: Trigger App Runner update from protected ECR tag
+        if: inputs.release_mode == 'deploy_service'
+        env:
+          SERVICE_ARN: ${{ vars.APP_RUNNER_SERVICE_ARN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$SERVICE_ARN"
+          aws apprunner start-deployment --service-arn "$SERVICE_ARN"
+          echo 'Deployment request submitted; verify RUNNING status and live /health before release acceptance.'
