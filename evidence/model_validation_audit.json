@@ -1,0 +1,22 @@
+{
+  "dataset_sha256": "b6c5959b1dd208548fb69f2b62732e0ec0728414f0d91c08eebecbd3718d1b96",
+  "train_rows": 43715,
+  "validation_rows": 12864,
+  "held_out_test_rows": 19296,
+  "validation_start": "2011-07-18",
+  "validation_end": "2011-09-05",
+  "baseline": {
+    "val_mae": 33.182524875621894,
+    "val_rmse": 111.44940692855377,
+    "val_wape_pct": 86.45703579928097
+  },
+  "gradient_boosting": {
+    "val_mae": 28.44315114442034,
+    "val_rmse": 86.21109278810667,
+    "val_wape_pct": 74.10860222225395
+  },
+  "baseline_run_id": "82bf99f1a26440a7a7dd663a466d19e4",
+  "model_run_id": "d76bde9b29c940709f904456c65f6d94",
+  "mlflow_model_uri": "models:/m-337965517a8849da931244a11c6625c9",
+  "final_test_evaluated": false
+}

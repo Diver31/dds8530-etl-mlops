@@ -1,0 +1,31 @@
+name: dds8530_airflow
+
+services:
+  airflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dds8530-airflow:3.1.5-local
+    command: standalone
+    env_file:
+      - ./db.env
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+      POSTGRES_HOST: host.docker.internal
+      POSTGRES_PORT: "55432"
+    volumes:
+      - airflow_data:/opt/airflow
+      - ./dags:/opt/airflow/dags:ro
+      - ./runs:/opt/project/airflow_runs:rw
+      - ../data/processed:/opt/project/data/processed:rw
+      - ../data/staging:/opt/project/data/staging:ro
+      - ../scripts:/opt/project/scripts:ro
+      - ../reports:/opt/project/reports:rw
+      - ../data/raw:/opt/project/data/raw:ro
+    restart: unless-stopped
+
+volumes:
+  airflow_data:

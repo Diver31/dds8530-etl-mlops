@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "mode": "load",
+  "table": "etl.fact_weekly_sales_airflow",
+  "records": 96063,
+  "products": 3782,
+  "units": 5241234,
+  "first_week": "2010-12-06",
+  "last_week": "2011-11-28"
+}

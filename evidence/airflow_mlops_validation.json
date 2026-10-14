@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "workspace": "035d7b5656bc575a",
+  "eligible_products": 1608,
+  "development_rows": 56579,
+  "holdout_rows_preserved": 19296,
+  "mlflow_model_uri": "models:/m-c60947c623c747dab068424425be1220",
+  "mlflow_model_run": "2f51a96c16a14ad1aeb243ae1018b486",
+  "model_reload": "PASS",
+  "prediction_check": "PASS",
+  "final_holdout_retested": false
+}

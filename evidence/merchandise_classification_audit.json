@@ -1,0 +1,29 @@
+{
+  "source_sha256": "4de9f2aa6e08ce5b734c82fdb3731c3150911f945bf6900b61a3aefa02ec5f54",
+  "input_records": 530104,
+  "classification_counts": {
+    "merchandise_candidate": 527758,
+    "exclude_nonmerchandise": 2021,
+    "hold_review": 325
+  },
+  "classification_reasons": {
+    "product_code_accepted": 527758,
+    "postage": 1126,
+    "dotcom_postage": 706,
+    "unattributed_manual_transaction": 322,
+    "carriage": 141,
+    "gift_voucher": 31,
+    "bank_charge": 12,
+    "platform_fee": 2,
+    "samples": 2,
+    "unusual_low_value_product": 3,
+    "bad_debt_adjustment": 1
+  },
+  "held_stock_codes": {
+    "M": 322,
+    "PADS": 3
+  },
+  "reconciliation": "PASS",
+  "duplicate_policy": "Original duplicates retained",
+  "classification_scope": "Provisional physical-merchandise candidates"
+}

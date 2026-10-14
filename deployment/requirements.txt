@@ -1,0 +1,8 @@
+# Same major/method library versions used for the verified October 2026 pipeline.
+# The approved model is re-trained by scripts/build_release_model.py in CI/CD.
+pandas==2.3.3
+scikit-learn==1.9.1
+joblib==1.6.0
+Flask==3.1.3
+prometheus-client>=0.21,<1
+gunicorn==26.2.0

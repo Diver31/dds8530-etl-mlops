@@ -1,0 +1,13 @@
+{
+  "timestamp_utc": "2026-10-14T04:10:28.029599+00:00",
+  "test_type": "Controlled historical feature replay",
+  "model_uri": "models:/m-cdf20cd9edbe44a3bc379a49953d6530",
+  "successful_requests": 75,
+  "rejected_requests": 15,
+  "success_counter_delta": 75,
+  "rejected_counter_delta": 15,
+  "elapsed_seconds": 43.99,
+  "prometheus_scrape": "UP",
+  "validation": "PASS",
+  "limitations": "Synthetic request activity; not a production load or model accuracy evaluation."
+}

@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: DDS8530 MLOps
+    orgId: 1
+    folder: DDS8530 Assignment 5
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    options:
+      path: /etc/grafana/provisioning/dashboards/json

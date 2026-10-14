@@ -1,0 +1,16 @@
+{
+  "source_merchandise_rows": 527758,
+  "uk_transaction_rows": 484004,
+  "uk_units_all_dates": 4654355,
+  "dask_partitions": 4,
+  "first_complete_week": "2010-12-06",
+  "last_complete_week": "2011-11-28",
+  "uk_product_week_rows": 93608,
+  "uk_products_complete_weeks": 3777,
+  "uk_units_complete_weeks": 4349811,
+  "products_with_26_plus_observed_weeks": 1732,
+  "products_with_40_plus_observed_weeks": 970,
+  "source_reconciliation": "PASS",
+  "global_comparison": "PASS",
+  "zero_sales_weeks": "Not yet generated"
+}

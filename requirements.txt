@@ -1,0 +1,14 @@
+# Direct runtime dependencies for the local ETL, experiment tracking, API, and monitoring.
+# Python 3.13; versions reflect the verified 2026 coursework environment.
+pandas>=2.3,<3
+dask[dataframe]>=2026.8,<2027
+scikit-learn>=1.9,<2
+mlflow>=3.17,<4
+SQLAlchemy>=2.0,<3
+psycopg[binary]>=3.2,<4
+python-dotenv>=1.0,<2
+requests>=2.32,<3
+openpyxl>=3.1,<4
+Flask>=3.1,<4
+prometheus-client>=0.21,<1
+boto3>=1.35,<2

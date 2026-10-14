@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "dataset_sha256": "b6c5959b1dd208548fb69f2b62732e0ec0728414f0d91c08eebecbd3718d1b96",
+  "development_rows": 56579,
+  "test_rows": 19296,
+  "test_weeks": 12,
+  "baseline": {
+    "test_mae": 39.83810116086236,
+    "test_rmse": 123.25029139258945,
+    "test_wape_pct": 77.42417634658558
+  },
+  "gradient_boosting": {
+    "test_mae": 35.038285380772116,
+    "test_rmse": 106.44355491562337,
+    "test_wape_pct": 68.09587573586474
+  },
+  "baseline_run_id": "4339bce94da943e195893dde5d06fc79",
+  "model_run_id": "e37001689697411791f1da63f36c7974",
+  "final_model_uri": "models:/m-cdf20cd9edbe44a3bc379a49953d6530",
+  "model_configuration": "Fixed using validation results",
+  "test_evaluated": true,
+  "forecast_assumption": "Previous week's actual sales available for each one-week-ahead prediction"
+}

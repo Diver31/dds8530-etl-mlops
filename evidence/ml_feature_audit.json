@@ -1,0 +1,19 @@
+{
+  "source_product_week_rows": 93608,
+  "eligibility_rule": "At least 20 observed weeks in first 40 weeks",
+  "eligible_products": 1608,
+  "observed_selected_product_weeks": 66397,
+  "zero_filled_product_weeks": 15910,
+  "model_ready_rows": 75875,
+  "train_rows": 56579,
+  "test_rows": 19296,
+  "train_last_week": "2011-09-05",
+  "test_first_week": "2011-09-12",
+  "test_last_week": "2011-11-28",
+  "national_holiday_weeks_train": 4,
+  "national_holiday_weeks_test": 0,
+  "evaluation": "Sequential one-week-ahead forecasting",
+  "missing_week_assumption": "Zero recorded sales after first observed sale; inventory unknown",
+  "normalization": "Deferred to training-only sklearn pipeline",
+  "validation": "PASS"
+}

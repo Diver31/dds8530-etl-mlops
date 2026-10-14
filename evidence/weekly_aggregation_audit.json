@@ -1,0 +1,16 @@
+{
+  "input_rows": 527758,
+  "dask_partitions": 4,
+  "input_units": 5577100,
+  "all_week_quantity_reconciliation": "PASS",
+  "first_complete_week": "2010-12-06",
+  "last_complete_week": "2011-11-28",
+  "complete_calendar_weeks": 52,
+  "observed_product_week_rows": 96063,
+  "distinct_products": 3782,
+  "complete_week_units": 5241234,
+  "processing_seconds": 0.32,
+  "dask_version": "2026.8.0",
+  "pandas_version": "2.3.3",
+  "missing_product_weeks": "Not yet zero-filled; required before model training"
+}
