@@ -1,0 +1,16 @@
+**/.env
+**/*.env
+**/*.db
+**/*.sqlite*
+**/__pycache__/
+.venv/
+data/
+reports/
+assets/
+.github/
+.git/
+orchestration/
+docs/
+evidence/
+*.zip
+# model_release/ intentionally included only after controlled build
